@@ -1,0 +1,329 @@
+[
+  {
+    "id": "1",
+    "brandName": "Amazon",
+    "rating": 4.5,
+    "description": "Shop millions of products with fast delivery",
+    "brandLogo": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    "coupons": [
+      {
+        "couponCode": "AMAZON20",
+        "description": "20% off on all electronics",
+        "expiryDate": "2023-12-31",
+        "condition": "Min purchase of $100",
+        "couponType": "Percentage"
+      },
+      {
+        "couponCode": "FREESHIP",
+        "description": "Free shipping on all orders",
+        "expiryDate": "2023-11-30",
+        "condition": "No minimum purchase",
+        "couponType": "Shipping"
+      }
+    ],
+    "shopLink": "https://www.amazon.com",
+    "category": "E-commerce",
+    "isSaleOn": true
+  },
+  {
+    "id": "2",
+    "brandName": "Nike",
+    "rating": 4.7,
+    "description": "Just do it with Nike's premium sportswear",
+    "brandLogo": "https://logo.clearbit.com/nike.com",
+    "coupons": [
+      {
+        "couponCode": "NIKE15",
+        "description": "15% off on all shoes",
+        "expiryDate": "2023-10-15",
+        "condition": "Valid on full-price items only",
+        "couponType": "Percentage"
+      }
+    ],
+    "shopLink": "https://www.nike.com",
+    "category": "Sportswear",
+    "isSaleOn": false
+  },
+  {
+    "id": "3",
+    "brandName": "Starbucks",
+    "rating": 4.3,
+    "description": "Enjoy premium coffee and beverages",
+    "brandLogo": "https://logo.clearbit.com/starbucks.com",
+    "coupons": [
+      {
+        "couponCode": "COFFEE1",
+        "description": "Buy one get one free on all drinks",
+        "expiryDate": "2023-09-30",
+        "condition": "Valid after 2pm",
+        "couponType": "BOGO"
+      },
+      {
+        "couponCode": "STAR10",
+        "description": "$10 off on $50 purchase",
+        "expiryDate": "2023-12-25",
+        "condition": "Valid on food items only",
+        "couponType": "Fixed Amount"
+      }
+    ],
+    "shopLink": "https://www.starbucks.com",
+    "category": "Food & Beverage",
+    "isSaleOn": true
+  },
+  {
+    "id": "4",
+    "brandName": "Uber Eats",
+    "rating": 4.2,
+    "description": "Food delivery from your favorite restaurants",
+    "brandLogo": "https://logo.clearbit.com/ubereats.com",
+    "coupons": [
+      {
+        "couponCode": "EATS25",
+        "description": "$25 off first order",
+        "expiryDate": "2023-12-31",
+        "condition": "New users only",
+        "couponType": "Fixed Amount"
+      }
+    ],
+    "shopLink": "https://www.ubereats.com",
+    "category": "Food Delivery",
+    "isSaleOn": false
+  },
+  {
+    "id": "5",
+    "brandName": "Adidas",
+    "rating": 4.6,
+    "description": "Premium sportswear and footwear",
+    "brandLogo": "https://logo.clearbit.com/adidas.com",
+    "coupons": [
+      {
+        "couponCode": "ADIDAS30",
+        "description": "30% off on sale items",
+        "expiryDate": "2023-11-20",
+        "condition": "Valid on selected items",
+        "couponType": "Percentage"
+      },
+      {
+        "couponCode": "FREESHIPAD",
+        "description": "Free shipping on all orders",
+        "expiryDate": "2023-10-31",
+        "condition": "No minimum purchase",
+        "couponType": "Shipping"
+      }
+    ],
+    "shopLink": "https://www.adidas.com",
+    "category": "Sportswear",
+    "isSaleOn": true
+  },
+  {
+    "id": "6",
+    "brandName": "Best Buy",
+    "rating": 4.4,
+    "description": "Electronics and appliances retailer",
+    "brandLogo": "https://logo.clearbit.com/bestbuy.com",
+    "coupons": [
+      {
+        "couponCode": "BBY100",
+        "description": "$100 off on TVs over $999",
+        "expiryDate": "2023-12-15",
+        "condition": "Valid on select models",
+        "couponType": "Fixed Amount"
+      }
+    ],
+    "shopLink": "https://www.bestbuy.com",
+    "category": "Electronics",
+    "isSaleOn": true
+  },
+  {
+    "id": "7",
+    "brandName": "Sephora",
+    "rating": 4.8,
+    "description": "Beauty products and cosmetics",
+    "brandLogo": "https://logo.clearbit.com/sephora.com",
+    "coupons": [
+      {
+        "couponCode": "BEAUTY15",
+        "description": "15% off for Beauty Insiders",
+        "expiryDate": "2023-10-31",
+        "condition": "Must be logged in",
+        "couponType": "Percentage"
+      }
+    ],
+    "shopLink": "https://www.sephora.com",
+    "category": "Beauty",
+    "isSaleOn": false
+  },
+  {
+    "id": "8",
+    "brandName": "Target",
+    "rating": 4.3,
+    "description": "One-stop shop for all your needs",
+    "brandLogo": "https://logo.clearbit.com/target.com",
+    "coupons": [
+      {
+        "couponCode": "TGT20",
+        "description": "20% off home decor",
+        "expiryDate": "2023-11-30",
+        "condition": "In-store only",
+        "couponType": "Percentage"
+      },
+      {
+        "couponCode": "TGT5",
+        "description": "$5 off $25 purchase",
+        "expiryDate": "2023-12-31",
+        "condition": "Online only",
+        "couponType": "Fixed Amount"
+      }
+    ],
+    "shopLink": "https://www.target.com",
+    "category": "Department Store",
+    "isSaleOn": true
+  },
+  {
+    "id": "9",
+    "brandName": "Zara",
+    "rating": 4.2,
+    "description": "Trendy fashion for men, women and kids",
+    "brandLogo": "https://logo.clearbit.com/zara.com",
+    "coupons": [
+      {
+        "couponCode": "ZARA10",
+        "description": "10% off first order",
+        "expiryDate": "2023-12-31",
+        "condition": "New customers only",
+        "couponType": "Percentage"
+      }
+    ],
+    "shopLink": "https://www.zara.com",
+    "category": "Fashion",
+    "isSaleOn": false
+  },
+  {
+    "id": "10",
+    "brandName": "Domino's Pizza",
+    "rating": 4.1,
+    "description": "Pizza delivery and carryout",
+    "brandLogo": "https://logo.clearbit.com/dominos.com",
+    "coupons": [
+      {
+        "couponCode": "PIZZA50",
+        "description": "50% off all pizzas",
+        "expiryDate": "2023-10-31",
+        "condition": "Online orders only",
+        "couponType": "Percentage"
+      },
+      {
+        "couponCode": "FREEBREAD",
+        "description": "Free breadsticks with order",
+        "expiryDate": "2023-11-15",
+        "condition": "With any pizza purchase",
+        "couponType": "Free Item"
+      }
+    ],
+    "shopLink": "https://www.dominos.com",
+    "category": "Food",
+    "isSaleOn": true
+  },
+  {
+    "id": "11",
+    "brandName": "Netflix",
+    "rating": 4.9,
+    "description": "Streaming service for movies and TV shows",
+    "brandLogo": "https://logo.clearbit.com/netflix.com",
+    "coupons": [
+      {
+        "couponCode": "NETFLIX1",
+        "description": "1 month free trial",
+        "expiryDate": "2023-12-31",
+        "condition": "New subscribers only",
+        "couponType": "Trial"
+      }
+    ],
+    "shopLink": "https://www.netflix.com",
+    "category": "Entertainment",
+    "isSaleOn": false
+  },
+  {
+    "id": "12",
+    "brandName": "H&M",
+    "rating": 4.0,
+    "description": "Affordable fashion for the whole family",
+    "brandLogo": "https://logo.clearbit.com/hm.com",
+    "coupons": [
+      {
+        "couponCode": "HM30",
+        "description": "30% off all sale items",
+        "expiryDate": "2023-11-30",
+        "condition": "In-store and online",
+        "couponType": "Percentage"
+      }
+    ],
+    "shopLink": "https://www.hm.com",
+    "category": "Fashion",
+    "isSaleOn": true
+  },
+  {
+    "id": "13",
+    "brandName": "Apple",
+    "rating": 4.8,
+    "description": "Premium electronics and gadgets",
+    "brandLogo": "https://logo.clearbit.com/apple.com",
+    "coupons": [
+      {
+        "couponCode": "EDU100",
+        "description": "$100 off for students",
+        "expiryDate": "2023-12-31",
+        "condition": "Valid with student ID",
+        "couponType": "Fixed Amount"
+      }
+    ],
+    "shopLink": "https://www.apple.com",
+    "category": "Electronics",
+    "isSaleOn": false
+  },
+  {
+    "id": "14",
+    "brandName": "Walmart",
+    "rating": 4.2,
+    "description": "Everyday low prices on everything",
+    "brandLogo": "https://logo.clearbit.com/walmart.com",
+    "coupons": [
+      {
+        "couponCode": "WM10",
+        "description": "$10 off $50 grocery purchase",
+        "expiryDate": "2023-11-15",
+        "condition": "Online pickup only",
+        "couponType": "Fixed Amount"
+      },
+      {
+        "couponCode": "WM25",
+        "description": "25% off toys",
+        "expiryDate": "2023-12-24",
+        "condition": "Seasonal offer",
+        "couponType": "Percentage"
+      }
+    ],
+    "shopLink": "https://www.walmart.com",
+    "category": "Department Store",
+    "isSaleOn": true
+  },
+  {
+    "id": "15",
+    "brandName": "Airbnb",
+    "rating": 4.5,
+    "description": "Book unique homes and experiences",
+    "brandLogo": "https://logo.clearbit.com/airbnb.com",
+    "coupons": [
+      {
+        "couponCode": "ABNB50",
+        "description": "$50 off your first stay",
+        "expiryDate": "2023-12-31",
+        "condition": "New users only",
+        "couponType": "Fixed Amount"
+      }
+    ],
+    "shopLink": "https://www.airbnb.com",
+    "category": "Travel",
+    "isSaleOn": false
+  }
+]
