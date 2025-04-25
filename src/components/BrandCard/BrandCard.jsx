@@ -11,7 +11,7 @@ const BrandCard = ({ brand }) => {
 
   return (
     <div>
-      <div className="flex justify-between items-center p-3 rounded-xl border-2 border-base-200 shadow-xl">
+      <div className="flex flex-col lg:flex-row lg:justify-between  items-center p-3 rounded-xl border-2 border-base-200 shadow-xl">
         <div className="p-3">
           <img className="size-20" src={brandLogo} alt="" />
           <h2 className="font-bold text-xl">{brandName}</h2>

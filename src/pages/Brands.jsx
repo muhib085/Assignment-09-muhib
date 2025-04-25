@@ -8,8 +8,8 @@ const Brands = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <h2 className="text-center font-semibold text-4xl my-10">
-        <span className="bg-linear-to-t from-sky-500 to-indigo-500 p-4 rounded-xl">
+      <h2 className="bg-sky-500 lg:bg-white py-3 lg:p-0 mx-3 lg:mx-0 rounded-xl lg:rounded-none text-white text-center font-semibold text-4xl my-10">
+        <span className="lg:bg-linear-to-t from-sky-500 to-indigo-500 lg:p-4 p-2 lg:rounded-xl">
           You're One Step Away from Big Savings 🤑
         </span>
       </h2>

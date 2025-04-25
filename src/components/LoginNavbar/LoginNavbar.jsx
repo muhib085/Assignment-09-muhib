@@ -1,8 +1,7 @@
 import React from "react";
-import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const LoginNavbar = () => {
   const links = (
     <>
       <li>
@@ -20,8 +19,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar pt-5">
-      <div className="navbar-start">
+    <div className="navbar lg:justify-evenly pt-5">
+      <div className="">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -51,24 +50,11 @@ const Navbar = () => {
           Discount PRO
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className=" hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
-      </div>
-      <div className="navbar-end flex lg:flex-row flex-col">
-        <div>
-          <Link to="/auth/login" className="lg:mr-2 btn">
-            Log In
-          </Link>
-        </div>
-        or
-        <div>
-          <Link to="/auth/registration" className="lg:ml-2 btn">
-            Register
-          </Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default LoginNavbar;
