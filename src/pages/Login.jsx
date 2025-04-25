@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const email = form.get("email");
+    const password = form.get("password");
+    // console.log(email, password);
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log("ERROR", error.message);
+      });
+  };
   return (
     <div className="my-12">
-      <form className="flex justify-center">
+      <form onSubmit={handleLogin} className="flex justify-center">
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xl border p-7">
           <p className="text-2xl font-bold text-center">Please Login</p>
 
           <label className="label">Email</label>
-          <input type="email" className="input w-xl" placeholder="Email" />
+          <input
+            type="email"
+            name="email"
+            className="input w-xl"
+            placeholder="Email"
+          />
 
           <label className="label">Password</label>
           <input
             type="password"
+            name="password"
             className="input w-xl"
             placeholder="Password"
           />
