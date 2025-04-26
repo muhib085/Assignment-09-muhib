@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Registration = () => {
-  const { createNewUser } = useContext(AuthContext);
+  const { createNewUser, setUser } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -16,10 +17,15 @@ const Registration = () => {
 
     createNewUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        const user = result.user;
+        setUser(user);
       })
       .catch((error) => {
-        console.log("ERROR", error.message);
+        toast.error(error.message, {
+          position: "top-center",
+          autoClose: 5000,
+          pauseOnHover: true,
+        });
       });
   };
 

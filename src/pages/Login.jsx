@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, setUser } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -13,10 +14,15 @@ const Login = () => {
 
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        const user = result.user;
+        setUser(user);
       })
       .catch((error) => {
-        console.log("ERROR", error.message);
+        toast.error(error.message, {
+          position: "top-center",
+          autoClose: 5000,
+          pauseOnHover: true,
+        });
       });
   };
   return (

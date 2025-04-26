@@ -10,8 +10,11 @@ import {
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
+
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   // create a new user:
   const createNewUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -29,19 +32,21 @@ const AuthProvider = ({ children }) => {
 
   // authChange:
   useEffect(() => {
-    const unSubscription = onAuthStateChanged(auth, (currentUser) => {
-      console.log("Current User", currentUser);
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
-      unSubscription();
+      unSubscribe();
     };
   }, []);
   const authInfo = {
     createNewUser,
     signInUser,
     user,
+    setUser,
     signOutUser,
+    loading,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

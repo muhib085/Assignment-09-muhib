@@ -61,7 +61,7 @@ const Navbar = () => {
         {user ? (
           <>
             <span>{user?.email}</span>
-            <a onClick={() => signOutUser()} className="btn ml-2">
+            <a onClick={signOutUser} className="btn ml-2">
               Sign Out
             </a>
           </>

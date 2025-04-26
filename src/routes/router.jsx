@@ -5,6 +5,9 @@ import Brands from "../pages/Brands";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
+import BrandDetails from "../pages/BrandDetails";
+import dataLoad from "../utilities/loaderFunc";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +18,15 @@ const router = createBrowserRouter([
     path: "/brands",
     element: <Brands></Brands>,
     loader: () => fetch("/couponData.json"),
+  },
+  {
+    path: "/brand/:id",
+    element: (
+      <PrivateRoute>
+        <BrandDetails></BrandDetails>
+      </PrivateRoute>
+    ),
+    loader: dataLoad,
   },
   {
     path: "/auth",

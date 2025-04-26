@@ -1,13 +1,9 @@
-import React, { useContext } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const BrandCard = ({ brand }) => {
-  const contextData = useContext(AuthContext);
-  console.log(contextData);
-
-  const { brandLogo, brandName, rating, description, isSaleOn } = brand;
+  const { brandLogo, brandName, rating, description, isSaleOn, id } = brand;
 
   return (
     <div>
@@ -22,7 +18,9 @@ const BrandCard = ({ brand }) => {
           <p>{description}</p>
         </div>
         <div className="flex flex-col justify-start">
-          <button className="btn">View Coupons</button>
+          <Link to={`/brand/${id}`}>
+            <button className="btn">View Coupons</button>
+          </Link>
           <div>
             {isSaleOn && (
               <motion.h1
