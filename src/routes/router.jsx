@@ -8,6 +8,7 @@ import Registration from "../pages/Registration";
 import BrandDetails from "../pages/BrandDetails";
 import dataLoad from "../utilities/loaderFunc";
 import PrivateRoute from "./PrivateRoute";
+import MyProfile from "../pages/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     loader: dataLoad,
+  },
+  {
+    path: "/my-profile",
+    element: <MyProfile></MyProfile>,
   },
   {
     path: "/auth",

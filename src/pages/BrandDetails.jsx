@@ -7,7 +7,6 @@ import Navbar from "../components/Navbar/Navbar";
 
 const BrandDetails = () => {
   const singleData = useLoaderData();
-  console.log(singleData);
 
   const { brandLogo, brandName, rating, shopLink } = singleData;
 
