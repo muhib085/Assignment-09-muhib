@@ -1,10 +1,17 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import { toast } from "react-toastify";
+import { Eye, EyeOff } from "lucide-react";
 
 const Registration = () => {
-  const { createNewUser, setUser } = useContext(AuthContext);
+  const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+
+  const [error, setError] = useState({});
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -13,19 +20,43 @@ const Registration = () => {
     const email = form.get("email");
     const photo = form.get("phot-url");
     const password = form.get("password");
-    console.log(name, photo);
+
+    if (password.length < 6) {
+      setError("password must be 6 characters or longer");
+      return;
+    }
+
+    // password validate for Uppercase letter
+    const uppercaseRegex = /^(?=.*[A-Z]).+$/;
+    if (!uppercaseRegex.test(password)) {
+      setError("Password must contain at least one uppercase letter.");
+      return;
+    }
+
+    // password validate for lowercase letter
+    const lowercaseRegex = /^(?=.*[a-z]).+$/;
+    if (!lowercaseRegex.test(password)) {
+      setError("Password must contain at least one lowercase letter.");
+      return;
+    }
 
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
+
+        console.log(user);
+
         setUser(user);
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            navigate("/");
+          })
+          .catch((err) => {
+            setError(err.message);
+          });
       })
-      .catch((error) => {
-        toast.error(error.message, {
-          position: "top-center",
-          autoClose: 5000,
-          pauseOnHover: true,
-        });
+      .catch((err) => {
+        setError({ ...error, register: err.message });
       });
   };
 
@@ -61,13 +92,25 @@ const Registration = () => {
             placeholder="Photo-URL"
           />
 
-          <label className="label">Password</label>
-          <input
-            type="password"
-            className="input w-xl"
-            name="password"
-            placeholder="Password"
-          />
+          <div className="relative">
+            <label className="label">Password</label>
+            <input
+              type={showPassword ? "text" : "password"}
+              className="input w-xl"
+              name="password"
+              placeholder="Password"
+            />
+            <button
+              className="btn btn-xs absolute right-1 top-6"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <EyeOff /> : <Eye />}
+            </button>
+          </div>
+
+          {error && <p className="text-red-500">{error}</p>}
+          {error.register && <p className="text-red-500">{error.register}</p>}
+
           <button className="btn btn-neutral mt-4">Register</button>
           <p className="my-4 text-center font-medium">
             Have already an account?{" "}

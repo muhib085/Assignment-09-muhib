@@ -6,7 +6,6 @@ import sellBg3 from "../../assets/sellBG3.png";
 
 const BrandOnSell = () => {
   const [brands, setBrands] = useState([]);
-  //   console.log(brands);
 
   useEffect(() => {
     fetch("/couponData.json")

@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import { toast } from "react-toastify";
 
 const Login = () => {
   const { signInUser, setUser } = useContext(AuthContext);
+
+  const [error, setError] = useState({});
 
   const location = useLocation();
 
@@ -15,7 +16,6 @@ const Login = () => {
     const form = new FormData(e.target);
     const email = form.get("email");
     const password = form.get("password");
-    // console.log(email, password);
 
     signInUser(email, password)
       .then((result) => {
@@ -23,12 +23,8 @@ const Login = () => {
         setUser(user);
         navigate(location?.state ? location.state : "/");
       })
-      .catch((error) => {
-        toast.error(error.message, {
-          position: "top-center",
-          autoClose: 5000,
-          pauseOnHover: true,
-        });
+      .catch((err) => {
+        setError({ ...error, login: err.message });
       });
   };
   return (
@@ -52,6 +48,9 @@ const Login = () => {
             className="input w-xl"
             placeholder="Password"
           />
+
+          {error.login && <p className="text-red-500">{error.login}</p>}
+
           <span>
             <Link className="my-4 hover:underline hover:font-medium">
               Forgat Password?
