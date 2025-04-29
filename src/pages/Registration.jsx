@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { Eye, EyeOff } from "lucide-react";
+import { toast } from "react-toastify";
 
 const Registration = () => {
   const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
 
-  const [error, setError] = useState({});
+  const [error, setError] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -43,20 +44,27 @@ const Registration = () => {
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
-
-        console.log(user);
-
         setUser(user);
         updateUserProfile({ displayName: name, photoURL: photo })
           .then(() => {
             navigate("/");
           })
           .catch((err) => {
-            setError(err.message);
+            toast.error(err.message, {
+              position: "top-center",
+              autoClose: 5000,
+              pauseOnHover: true,
+              theme: "colored",
+            });
           });
       })
-      .catch((err) => {
-        setError({ ...error, register: err.message });
+      .catch((error) => {
+        toast.error(error.message, {
+          position: "top-center",
+          autoClose: 5000,
+          pauseOnHover: true,
+          theme: "colored",
+        });
       });
   };
 
@@ -109,7 +117,6 @@ const Registration = () => {
           </div>
 
           {error && <p className="text-red-500">{error}</p>}
-          {error.register && <p className="text-red-500">{error.register}</p>}
 
           <button className="btn btn-neutral mt-4">Register</button>
           <p className="my-4 text-center font-medium">

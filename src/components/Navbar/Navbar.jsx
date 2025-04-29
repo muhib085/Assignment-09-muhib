@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    signOutUser();
+    navigate("/");
+  };
 
   const links = (
     <>
@@ -63,7 +69,7 @@ const Navbar = () => {
         {user ? (
           <>
             <span>{user?.email}</span>
-            <a onClick={signOutUser} className="btn ml-2">
+            <a onClick={handleSignOut} className="btn ml-2">
               Sign Out
             </a>
           </>
